@@ -15,3 +15,5 @@
 [000003](./sketches/001/000003/) - Drawing lines
 
 [000004](./sketches/001/000004/) - Adding text (as a distinct DOM Element) 
+
+[000005](./sketches/001/000005/) - Adding text (as procedural TextGeometry) 
