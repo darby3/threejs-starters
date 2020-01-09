@@ -14,3 +14,7 @@
 /*  align-self: center;*/
 /*  justify-self: center;*/
 /*}*/
+
+body {
+    margin: 0;
+}
