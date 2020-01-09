@@ -2,100 +2,42 @@
   document.addEventListener('DOMContentLoaded', function() {
     console.log("hello let us begin using threejs as well");
 
-    var renderer = null;
-    var scene = null;
-    var camera = null;
-    var cube = null;
+    // Take the starter tutorial and apply it to a pre-created canvas element.
 
-    var duration = 5000; // ms
-    var currentTime = Date.now();
+    // Create a scene
+    const scene = new THREE.Scene();
 
-    function animate() {
-      var now = Date.now();
-      var deltat = now - currentTime;
-      currentTime = now;
-      var fract = deltat / duration;
-      var angle = Math.PI * 2 * fract;
-      cube.rotation.x += angle;
-      cube.rotation.y += angle;
-      cube.rotation.z += angle;
-    }
+    // Get our canvas element
+    const canvas = document.getElementById('canvas');
 
-    function run() {
-      requestAnimationFrame(run);
+    // Create a camera and a renderer. Match them up with the canvas element.
+    const camera = new THREE.PerspectiveCamera( 75, canvas.width / canvas.height, 0.1, 1000 );
 
-      // Render the scene
-      renderer.render( scene, camera );
-
-      // Spin the cube for next frame
-      animate();
-    }
-
-
-    var canvas = document.getElementById('canvas');
-
-    // Create the Three.js renderer and attach it to our canvas
-    renderer = new THREE.WebGLRenderer( { canvas: canvas, antialias: true } );
-
-    // Set the viewport size
-    renderer.setSize(canvas.width, canvas.height);
-
-    // Create a new Three.js scene
-    scene = new THREE.Scene();
-
-    // Add  a camera so we can view the scene
-    camera = new THREE.PerspectiveCamera( 45, canvas.width / canvas.height, 1, 4000 );
-    scene.add(camera);
-
-    // Add a directional light to show off the object
-    var light = new THREE.DirectionalLight( 0xffffff, 1.5);
-
-    // Position the light out from the scene, pointing at the origin
-    light.position.set(-4, -4, 0);
-    scene.add( light );
-
-    // Now, create a Phong material to show shading
-    var material = new THREE.MeshPhongMaterial({
-      color: 0xff0000
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+      antialias: true
     });
+    renderer.setSize( canvas.width, canvas.height );
 
-    // Create the cube geometry
-    var geometry = new THREE.CubeGeometry(4, 2, 2);
-
-    // And put the geometry and material together into a mesh
-    cube = new THREE.Mesh(geometry, material);
-
-    // Move the mesh back from the camera and tilt it toward the viewer
-    cube.position.z = -8;
-    cube.rotation.x = Math.PI / 5;
-    cube.rotation.y = Math.PI / 5;
-
-    // Finally, add the mesh to our scene
+    // Create a cube
+    var geometry = new THREE.BoxGeometry( 2, 2, 2 );
+    var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    var cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
 
-    // Run the run loop
-    run();
+    // Move the camera out so we can see the cube.
+    camera.position.z = 5;
 
+    // Animation loop.
+    var animate = function () {
+      requestAnimationFrame( animate );
 
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
 
+      renderer.render( scene, camera );
+    };
 
-    // // Common
-    // var canvas = document.getElementById('canvas');
-    // var ctx = canvas.getContext('2d');
-
-    // var mouse = utils.captureMouse(canvas);
-
-    // // Other code
-
-    // // Draw loop
-    // function drawFrame() {
-    //   requestAnimationFrame(drawFrame, ctx);
-    //   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    //   // code
-    // }
-
-    // drawFrame();
-
+    animate();
   });
 }());
