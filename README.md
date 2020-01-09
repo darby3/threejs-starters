@@ -23,3 +23,7 @@ I'm trying to learn three.js. There's a bunch of stuff it feels like I should kn
 [000007](./sketches/001/000007/) - Moving the spotlight in a circle around a reflective objects 
 
 [000008](./sketches/001/000008/) - Adding two spotlights and moving both of them
+
+[000009](./sketches/001/000009/) - Creating a plane geometry
+
+[000010](./sketches/001/000010/) - Load an image and apply it a plane
