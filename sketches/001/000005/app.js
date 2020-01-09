@@ -3,6 +3,7 @@
     console.log("hello let us begin using threejs as well");
 
     // Procedural text.
+    // See #4, https://threejs.org/docs/index.html#manual/en/introduction/Creating-text
 
     // Make some random text.
     // Stolen from https://stackoverflow.com/a/1349426/2900883

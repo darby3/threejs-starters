@@ -1,4 +1,4 @@
-# Canvas Experiments
+# three.js starter files
 
 ## About
 
@@ -17,3 +17,9 @@
 [000004](./sketches/001/000004/) - Adding text (as a distinct DOM Element) 
 
 [000005](./sketches/001/000005/) - Adding text (as procedural TextGeometry) 
+
+[000006](./sketches/001/000006/) - Adding a spotlight and a reflective material
+
+[000007](./sketches/001/000007/) - Moving the spotlight in a circle around a reflective objects 
+
+[000008](./sketches/001/000008/) - Adding two spotlights and moving both of them
