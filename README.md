@@ -27,3 +27,9 @@ I'm trying to learn three.js. There's a bunch of stuff it feels like I should kn
 [000009](./sketches/001/000009/) - Creating a plane geometry
 
 [000010](./sketches/001/000010/) - Load an image and apply it a plane
+
+[000011](./sketches/001/000011/) - Creating and destroying things on the fly
+
+[000012](./sketches/001/000012/) - Create an array of things an animate them
+
+[000013](./sketches/001/000013/) - Adding some mouse input
